@@ -21,10 +21,3 @@ def load_data(filename):
     myfile.close()
 
     return (X, Y)
-
-# def confusion_matrix(Ytest, Ypred):
-#     labels = np.unique(Ytest)
-#     n_labels = len(labels)
-#     matrix = np.zeros((n_labels, n_labels))
-#
-#     for i in range(len(Ytest)):
