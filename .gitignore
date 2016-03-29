@@ -1,0 +1,7 @@
+CCtrain
+CCtest1
+CCtest2
+bin/
+lib/
+include/
+*.pyc
