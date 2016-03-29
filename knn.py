@@ -60,9 +60,10 @@ class KNN:
         #     dist = self.distance(X, self.Xtrain[i], self.n_features)
         #     distances.append((dist, self.ytrain[i]))
 
-        # distances = [((self.distance(X, self.Xtrain[i], self.n_features), self.ytrain[i])) for i in range(self.n_training_samples)]
-        distances = Parallel(n_jobs=4)(delayed(self.distance)(X, self.Xtrain[i], self.n_features) for i in range(self.n_training_samples))
-        distances = zip(distances, self.ytrain)
+        distances = [((self.distance(X, self.Xtrain[i], self.n_features), self.ytrain[i])) for i in range(self.n_training_samples)]
+
+        #distances = Parallel(n_jobs=8)(delayed(self.distance)(X, self.Xtrain[i], self.n_features) for i in range(self.n_training_samples))
+        #distances = zip(distances, self.ytrain)
 
         # ordena o vetor de distâncias
         sorted_distances = sorted(distances, key=lambda x: x[0])
